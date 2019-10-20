@@ -12,7 +12,7 @@ int main(int argc, char *argv[]) {
 		const char zahlen[10] = { '0' ,'1','2','3','4','5','6','7','8','9' };
 		const std::string suchend(argv[1]);
 
-		auto start = std::chrono::steady_clock::now(); 
+		const auto start = std::chrono::steady_clock::now(); 
 		auto stop_found = start;
 
 #pragma omp parallel for 
@@ -28,8 +28,7 @@ int main(int argc, char *argv[]) {
 																		if(suchend == wort) {
 																				std::cout << "Gefunden nach: " << (Null_Stelle+1)*(Eins_Stelle+1)*(Zwei_Stelle+1)*(Drei_Stelle+1)*(Vier_Stelle+1)*(Fuenf_Stelle+1)*(Sechs_Stelle+1)*(Sieben_Stelle+1) << " Iterationen" << std::endl;
 																				stop_found = std::chrono::steady_clock::now(); 
-																				file <<wort << std::endl;
-																		} else {
+																		} else if(suchend == "wordlist") {
 																				file << wort << std::endl;
 																		}
 																}
@@ -40,10 +39,11 @@ int main(int argc, char *argv[]) {
 						}
 				}
 		}
-		auto stop_end = std::chrono::steady_clock::now(); 
+		const auto stop_end = std::chrono::steady_clock::now(); 
 
 		auto dauer_gefunden = std::chrono::duration_cast<std::chrono::milliseconds>(stop_found - start); 
 		auto dauer_ende = std::chrono::duration_cast<std::chrono::seconds>(stop_end - start);
-
+		if(suchend != "wordlist")
 		std::cout << "Passwort gefunden in: " << dauer_gefunden.count() << " Millisekunden\nGesamte Suchdauer: " << dauer_ende.count() << " Sekunden" << std::endl;
+		file.close();
 }
