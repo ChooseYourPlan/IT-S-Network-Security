@@ -1,3 +1,9 @@
 [submodule "krackattacks-scripts"]
 	path = krackattacks-scripts
 	url = https://github.com/vanhoefm/krackattacks-scripts.git
+[submodule "krackattacks-poc-zerokey"]
+	path = krackattacks-poc-zerokey
+	url = https://github.com/vanhoefm/krackattacks-poc-zerokey.git
+[submodule "metasploit-framework"]
+	path = metasploit-framework
+	url = https://github.com/rapid7/metasploit-framework.git
