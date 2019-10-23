@@ -1,1 +1,22 @@
+<https://www.youtube.com/watch?v=Oh4WURZoR98>
+
+Man in the Harpoons
+
+Der belgische Forscher Mathy Vanhoef hat im Jahre 2017 den KRACK wieder ins Leben gerufen. Laut seiner Aussage hat er ihn verbessert in der Sicherheitsanfälligkeit. Der sogenannte „Key-Reinstallation Attack“ oder auch KRACK genannt funktioniert potentiell gegen alle modernen geschützten Wi-Fi Verbindungen/Netzwerke(Stand 2017). Man kann mit dem KRACK die Daten manipulieren sowie abhören/abfragen. Das ist aber auf die Konfig von dem angegriffenen Ziel abhängig. Die einzige Limitation des Angreifers ist das er in Reichweite seines Ziels sein muss. Es betrifft aber nicht nur WPA2 Personal sondern auch Enterprise egal welche Verschlüsselungs Chiffren das Netzwerk benutzt. Die anfälligsten Clients sind Linux und Android 6.0. herr Vanhoef sagt selber das nicht die individuellen Produkte oder implementationen unsicher sind sondern der Wi-Fi Standard selber. Zum verhindern der Attacken muss der User die betroffenen Produkte so schnell wie möglich updaten wenn das security Update vorhanden ist. Der KRACK ziel auf den „Four-Way“ Handshake des WPA2 protocols ab und vertraut darauf das das Ziel-Gerät einen bereits benutzenden Key benutzt. ***KRACK targets the four-way handshake of the WPA2 protocol and relies on tricking a victim's device into reusing an already-in-use key.***** **Diese Geschickte Bewegung wird durch Manipulieren und Wiedergeben von kryptografischen Handshake-Nachrichten erreicht. Es basiert darauf das man Datenpakete klaut die vom aktuell benutzen Key sind die der Client benutzt.
+
+Wie die reinstallation von ptk & gtk
+
+Die Installation des PTK geschieht indem man die Vierte Nachricht des FourWay Handshakes abfängt und dann der Client denkt das damit der Fourway Handshake beendet ist. Damit wird die Installation des Negation des Session Keys eingeleitet(PTK). Als Ergebnis wird ein Frame gesendet der nun als Transmitter gilt und damit kann man dann den Layer Encrypthen.
+
+Was machen die Android/Linux Versionen nach Android 6.0 anders.
+
+WPA sublibin benutz
+
+<span id="anchor"></span>
+
+Fourway Handshake KRACK
+
+Als erstes erlangt man als „Hacker“ einen multi-channel (MitM) man in the middle Position. Von hier aus kann man NICHT die decryption der Frames starten, hier kann man nur Nachrichten zwischen AP und client blocken und verzögern. Um in den MitM zu kommen zwingt man das Opfer in einen so genannten rogue channel zu connecten. Dies erfolgt durch ein tool. Einmal in dieser Position leitet man die ersten drei Nachrichten des FWHS unverändert weiter, nicht jedoch die 4 Nachricht. Jedoch denkt der Client das der HS komplett ist was wiederum heißt das er den negotiated session key installiert. Als Ergebnis kommt zu Stande das alle Daten des Clients die gesendet werden unverschlüsselt sind. ABER, weil der Router die vierte Message nicht bekommen hat ist der HS nicht fertig und somit sendet er eine neue Message 3 mit erhöhtem Counter. Wenn der Client die Nachricht bekommt sendet er eine neue Message 4 dazu kommt das er den PTK reinstalliert und reseted somit die Variablen und auch den Counter. Das löst aus das es die Variablen wieder benutzt und als Datenframe sendet. Dazu kommt das man Frames selber senden kann, da der replay counter reseted wurde.
+
+Im Erste Schritt der erste Input ist der PMK Primary Master Key, beide haben diesen und es wird sicher gegangen das der pmk noch nie über das wireless medium übertragen wurde. Der Zweite Input ist der Anonce die Authentifikationsnummer. Der dritte input ist der snonce das ist die client nummer. Der vierte und fünfte input sind die MAC addressen der teilnehmenden Stationen(Client AA Router SA). Das sind die Schritte um die Encrypthungs Key zu erstellen. Darauf hin antwortet der Client mit Snonce und, weil es schon alle vollständigen Inputs hat kann es das Snonce mit einem Message integrity code protecten. Jetzt kann der Router den snonce bestätigen, da es mit der MIC protected ist und somit sicher geht das es nicht rumgefuscht wurde. Jetzt bestätigt der router den PTK pariwaise transient key . Jetzt sendet der Router den GTK (Group temporal Key) zu den client und der GTK ist auch MIT protected. Jetzt installiert der Client den GTK und sendet dann nochmal eine Nachricht mit der Bestätigung das er den bekommen hat und das er beide jetzt installiert hat und ready ist für encrypted data austausch.
 
