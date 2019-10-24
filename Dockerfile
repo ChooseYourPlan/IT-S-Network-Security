@@ -17,7 +17,9 @@ RUN sudo apt-get update && \
 		  sudo apt-get -y install ssh && \
 		   sudo apt-get -y install vim && \
 		    sudo apt-get -y install git && \
-		     sudo apt-get -y install aapt
+		     sudo apt-get -y install aapt && \
+		      sudo apt-get -y install default-jre && \
+		       sudo apt-get -y install default-jdk	
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
