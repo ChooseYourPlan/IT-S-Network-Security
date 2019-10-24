@@ -14,7 +14,8 @@ RUN sudo apt-get update && \
        sudo apt-get -y install wget && \
 		sudo apt-get -y install openssl && \
 		 sudo apt-get -y install curl && \
-		  sudo apt-get -y install ssh
+		  sudo apt-get -y install ssh && \
+		   sudo apt-get -y install vim
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
@@ -27,7 +28,7 @@ RUN sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN sudo python3 get-pip.py
 RUN sudo python3 -m pip install pysftp
 
-RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/get_file_sftp.py'
+RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/get_file_sftp.py'
 
 RUN sudo apktool d -f -o original Slack.apk
 RUN sudo apktool d -f -o payload SlackPen.apk
