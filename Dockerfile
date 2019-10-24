@@ -19,7 +19,9 @@ RUN sudo apt-get update && \
 		    sudo apt-get -y install git && \
 		     sudo apt-get -y install aapt && \
 		      sudo apt-get -y install default-jre && \
-		       sudo apt-get -y install default-jdk	
+		       sudo apt-get -y install default-jdk && \
+				sudo apt-get -y install libssl-dev && \
+				 sudo apt-get -y install zipalign
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
