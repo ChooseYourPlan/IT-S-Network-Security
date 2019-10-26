@@ -5,7 +5,7 @@ send "yes"
 expect "password:"
 send "pass\n"
 expect "sftp>"
-send "get Slack.apk\n"
+send "get fb.apk\n"
 expect "sftp>"
 send "exit\n"
 interact
