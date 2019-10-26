@@ -1,4 +1,4 @@
-export apktool_version=2.3.4
+export apktool_version=2.4.0
 sudo sh -c 'sudo apt-get -y install default-jre'
 sudo -E sh -c 'wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_$apktool_version.jar -O /usr/local/bin/apktool.jar'
 sudo chmod +x /usr/local/bin/apktool.jar
