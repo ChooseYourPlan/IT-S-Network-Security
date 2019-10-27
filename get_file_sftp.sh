@@ -5,7 +5,7 @@ send "yes"
 expect "password:"
 send "pass\n"
 expect "sftp>"
-send "get fb.apk\n"
+send "get CameraSample.apk\n"
 expect "sftp>"
 send "exit\n"
 interact
