@@ -3,6 +3,7 @@ import pysftp
 from configparser import ConfigParser
 
 parser = ConfigParser()
+
 if os.path.isfile('../config_payload.ini'):
     parser.read('../config_payload.ini')
 elif os.path.isfile('config_payload.ini'):
