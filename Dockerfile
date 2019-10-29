@@ -22,6 +22,8 @@ RUN sudo apt-get update && \
 		       sudo apt-get -y install default-jdk && \
 			sudo apt-get -y install zipalign
 
+RUN sudo git submodule update --init
+
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
 RUN sudo /bin/bash -l -c 'sudo curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && sudo chmod 755 msfinstall && sudo ./msfinstall'
@@ -36,4 +38,4 @@ RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/get_file_sftp.py'
 RUN sudo chmod 755 Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh
 RUN sudo ./Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh; exit 0
 
-RUN sudo /bin/bash -l -c './create_payload.sh'
+RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/create_payload.py'
