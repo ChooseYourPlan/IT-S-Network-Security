@@ -1,4 +1,7 @@
-## Man in the Harpoons
+<img src="https://regmedia-co-uk.cdn.ampproject.org/i/s/regmedia.co.uk/2015/10/09/kraken_i8e75456.jpg?x=520&y=345&crop=1" alt="mth " width="200" align="right"/>
+
+
+## Man the Harpoons
 
 Der belgische Forscher Mathy Vanhoef hat im Jahre 2017 den KRACK wieder ins Leben gerufen. Laut seiner Aussage hat er ihn in der Sicherheitsanfälligkeit verbessert. Der sogenannte „Key-Reinstallation Attack“, oder auch KRACK genannt, funktioniert potentiell gegen alle modernen geschützten Wi-Fi Verbindungen/Netzwerke (Stand 2017). Man kann mit dem KRACK die Daten manipulieren sowie abhören/abfragen. Das ist aber auf die Konfiguration des angegriffenen Zieles abhängig. Die einzige Limitation des Angreifers ist, dass er in Reichweite seines Zieles sein muss. Es betrifft aber nicht nur WPA2 Personal sondern auch Enterprise, egal welche Verschlüsselungs-Chiffren das Netzwerk benutzt. Die anfälligsten Clients sind Linux und Android 6.0. Herr Vanhoef sagt selber, dass nicht die individuellen Produkte oder Implementationen unsicher sind, sondern der Wi-Fi Standard selbst. Zum verhindern der Attacken muss der User die betroffenen Produkte so schnell wie möglich updaten, falls das Security-Update vorhanden ist. Der KRACK zielt auf den „Four-Way“ Handshake des WPA2 Protokolls ab und vertraut darauf, dass das Ziel-Gerät einen bereits vorhandenen Key benutzt. Diese geschickte Vorgehensweise wird durch Manipulieren und Wiedergeben von kryptografischen Handshake-Nachrichten erreicht. Es basiert darauf das man Datenpakete klaut, die vom aktuell benutzten Key sind, die der Client benutzt.
 
