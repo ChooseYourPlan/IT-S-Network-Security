@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/4-way-handshake_WPA2.png" width="200" align="right"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/4-way-handshake_WPA2.png" width="500" align="right"/>
 
 # WPA2 (Wi-Fi protected access 2) 
 
