@@ -40,3 +40,6 @@ RUN sudo ./Apktool_Fix_Kali_2019/Apktool_Fix_Kali_2019.sh; exit 0
 
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/create_payload.py'
 RUN sudo /bin/bash -l -c 'sudo python3 /usr/src/wdir/P-Scripts/push_file_sftp.py'
+
+RUN sudo /bin/bash -l -c 'sudo apt -y --fix-broken install'
+RUN sudo /bin/bash -l -c 'sudo apt -y install iproute2'
