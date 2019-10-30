@@ -16,21 +16,23 @@ Die Voraussetzung, damit der Wörterbuchangriff auch erfolgreich ist, dass der B
 
 Der Ablauf eines WPA WLAN-Hacks per Dictionary Attack ist folgender:
 
-1. „Material&quot; beschaffen
-  1. Wordlist
-  2. WLAN-Adapter
-  3. Zielnetzwerk
-2. WLAN identifizieren
-3. Four-Way Handshake aufzeichnen
-  1. Deauthentication Attack
-4. Passwort mit Hilfe von Wordlist herausfinden
+1. „Material&quot; beschaffen  
++ Wordlist  
++ WLAN-Adapter  
++ Zielnetzwerk
++ WLAN identifizieren
+2. Four-Way Handshake aufzeichnen  
++ Deauthentication Attack
+3. Passwort mit Hilfe von Wordlist herausfinden
 
-Zuerst einmal wird ein Zielnetzwerk benötigt, dafür kann man eine virtuelle Instanz nutzen oder auch einen Router. Man muss im Wireless-Setup WPA mit einem Passwort einrichten. Außerdem muss sich in diesem WLAN ein aktiver WLAN Client befinden, da man den Handshake zwischen einem Client und dem Access Point aufzeichnen möchte. Außerdem wird eine Wordlist benötigt, mit Hilfe derer findet man im letzten Schritt das Passwort heraus. Dies ist eine Textdatei in der sich in jeder Zeile ein Passwort in Klartext befindet. In einer Worldlist stehen häufig verwendete Passwörter, unter denen sich im Idealfall auch das gesuchte Passwort befindet. Man kann diese selbst schreiben, wobei dies ziemlich aufwendig ist, oder man lädt eine beliebige Datei aus dem Internet herunter. Ohne eine Wordlist funktioniert diese Attacke nicht!
+Schritt 1: „Material" beschaffen
 
+Zuerst einmal wird ein Zielnetzwerk benötigt, dafür kann man eine virtuelle Instanz in Kombination mit dem Router nutzen. Man muss im Wireless-Setup WPA mit einem Passwort einrichten. Außerdem muss sich in diesem WLAN ein aktiver WLAN Client befinden, da man den Handshake zwischen einem Client und dem Access Point aufzeichnen möchte. Außerdem wird eine Wordlist benötigt, mit Hilfe derer findet man im letzten Schritt das Passwort heraus. Dies ist eine Textdatei in der sich in jeder Zeile ein Passwort in Klartext befindet. In einer Worldlist stehen häufig verwendete Passwörter, unter denen sich im Idealfall auch das gesuchte Passwort befindet. Man kann diese selbst schreiben, wobei dies ziemlich aufwendig ist, oder man lädt eine beliebige Datei aus dem Internet herunter. Ohne eine Wordlist funktioniert diese Attacke nicht!
 
+Schritt 2: Four-Way Handshake aufzeichnen
 
+Als nächstes muss man den Handshake zwischen Client und Access Point aufzeichnen. Ein Handshake findet dann statt, wenn sich ein Client mit dem Passwort im WLAN anmelden möchte. Unter Umständen dauert es eine Weile, bis ein Client eine Authentifizierung vornimmt. Für diesen Fall kann man eine Deauthentifizierung vornehmen, damit der Client gezwungen ist, sich neu zu Authentifizieren. Den Handshake nimmt man am besten mehrfach auf, denn wenn der Client versucht sich mit einem falschen Passwort anzumelden, ist der Handshake ebenfalls fehlerhaft. Wenn man einen erfolgreichen Handshake aufgezeichnet hat, kann man zu Schritt 3 übergehen.
 
+Schritt 3: Passwort mit Hilfe einer Wordlist herausfinden
 
-
-
-Mitte 2004 wurde dann der Nachfolger von WPA eingeführt, WPA2. Hier wurde auch der vollständige IEEE 802.11i-Standard umgesetzt. WPA ist heutzutage nicht mehr ausreichend sicher und sollte somit nicht für drahtlose Netzwerke verwendet werden.
+Mit Hilfe des aufgezeichneten Handshakes und einer Wordlist kann man nun das WLAN-Passwort herausfinden. Nun werden der Reihe nach alle Passwörter aus dem Textdokument ausprobiert, bis eines der Wörter mit dem richtigen Passwort übereinstimmt. Dies geschieht automatisch.
