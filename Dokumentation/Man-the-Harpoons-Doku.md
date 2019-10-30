@@ -5,9 +5,9 @@
 
 Der belgische Forscher Mathy Vanhoef hat im Jahre 2017 den KRACK wieder ins Leben gerufen. Laut seiner Aussage hat er ihn in der Sicherheitsanfälligkeit verbessert. Der sogenannte „Key-Reinstallation Attack“, oder auch KRACK genannt, funktioniert potentiell gegen alle modernen geschützten Wi-Fi Verbindungen/Netzwerke (Stand 2017). Man kann mit dem KRACK die Daten manipulieren sowie abhören/abfragen. Das ist aber auf die Konfiguration des angegriffenen Zieles abhängig. Die einzige Limitation des Angreifers ist, dass er in Reichweite seines Zieles sein muss. Es betrifft aber nicht nur WPA2 Personal sondern auch Enterprise, egal welche Verschlüsselungs-Chiffren das Netzwerk benutzt. Die anfälligsten Clients sind Linux und Android 6.0. Herr Vanhoef sagt selber, dass nicht die individuellen Produkte oder Implementationen unsicher sind, sondern der Wi-Fi Standard selbst. Zum verhindern der Attacken muss der User die betroffenen Produkte so schnell wie möglich updaten, falls das Security-Update vorhanden ist. Der KRACK zielt auf den „Four-Way“ Handshake des WPA2 Protokolls ab und vertraut darauf, dass das Ziel-Gerät einen bereits vorhandenen Key benutzt. Diese geschickte Vorgehensweise wird durch Manipulieren und Wiedergeben von kryptografischen Handshake-Nachrichten erreicht. Es basiert darauf das man Datenpakete klaut, die vom aktuell benutzten Key sind, die der Client benutzt.
 
-### Wie die Reinstallation von ptk & gtk funktioniert
+### Wie die Reinstallation von PTK & GTK funktioniert
 
-Die Installation des PTK geschieht, indem man die vierte Nachricht des FourWay Handshakes abfängt und dann der Client denkt, dass damit der Fourway Handshake beendet ist. Damit wird die Installation des Negotiaton-Session Keys eingeleitet(PTK). Als Ergebnis wird ein Frame gesendet der nun als Transmitter gilt und damit kann man dann den Sicherheitslayer Encrypthen.<span id="anchor"></span>
+Die Installation des PTK geschieht, indem man die vierte Nachricht des FourWay Handshakes abfängt und dann der Client denkt, dass damit der Fourway Handshake beendet ist. Damit wird die Installation des Pariwaise-Transient-Key eingeleitet(PTK). Als Ergebnis wird ein Frame gesendet der nun als Transmitter gilt und damit kann man dann den Sicherheitslayer Encrypthen.<span id="anchor"></span>
 
 ### Fourway Handshake KRACK
 
