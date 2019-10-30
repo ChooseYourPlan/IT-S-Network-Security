@@ -1,4 +1,4 @@
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WEP_Kodierung.JPG/700px-WEP_Kodierung.JPG" width="200" align="right"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/WEP_Kodierung.JPG/700px-WEP_Kodierung.JPG" width="500" align="right"/>
 
 # Wired Equvalent Privacy (WEP)
 
