@@ -5,7 +5,7 @@ import sys
 import datetime
 address = []
 
-subp = subprocess.Popen(["python", "sniff_add.py"], stdout=subprocess.PIPE, bufsize=1,universal_newlines=True)
+subp = subprocess.Popen(["python3", "sniff_add.py"], stdout=subprocess.PIPE, bufsize=1,universal_newlines=True)
 with subp as p:
     for line in p.stdout:
         address.append(line)

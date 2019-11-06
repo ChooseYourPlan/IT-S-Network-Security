@@ -9,4 +9,4 @@ for ping in range(1,255):
         a_ava.append(address);
 
 for string in a_ava:
-    print string
+    print(string)
