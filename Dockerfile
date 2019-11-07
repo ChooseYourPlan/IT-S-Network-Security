@@ -2,7 +2,6 @@ FROM python:3.7
 FROM siutin/ubuntu-rvm
 
 WORKDIR /usr/src/wdir
-ADD . /usr/src/wdir
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN sudo apt-get update
@@ -22,7 +21,7 @@ RUN sudo apt-get update && \
 		       sudo apt-get -y install default-jdk && \
 			sudo apt-get -y install zipalign
 
-RUN sudo git submodule update --init
+RUN sudo git clone --recurse-submodules -j8 https://github.com/ChooseYourPlan/IT-S-Network-Security.git .
 
 RUN sudo /bin/bash -l -c '/usr/src/wdir/install-apktool.sh'
 
